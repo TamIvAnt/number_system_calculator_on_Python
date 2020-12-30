@@ -113,7 +113,6 @@ def AwayNumber():
     if fNumSystem == 2:
         value_bin1 = int(value1, 2)
         value_bin2 = int(value2, 2)
-
         if value_bin1 < value_bin2:
             result = value_bin2 - value_bin1
             result_bin = bin(int(result))[2:]
@@ -123,11 +122,9 @@ def AwayNumber():
             result_bin = bin(int(result))[2:]
             print(result_bin)
 
-
     elif fNumSystem == 8:
         value_oct1 = int(value1, 8)
         value_oct2 = int(value2, 8)
-
         if value_oct1 < value_oct2:
             result = value_oct2 - value_oct1
             result_oct = oct(int(result))[2:]
@@ -137,14 +134,12 @@ def AwayNumber():
             result_oct = oct(int(result))[2:]
             print(result_oct)
 
-
     elif fNumSystem == 10:
         print(int( int(value1) - int(value2) ))
 
     elif fNumSystem == 16:
         value_hex1 = int(value1, 16)
         value_hex2 = int(value2, 16)
-
         if value_hex1 < value_hex2:
             result = value_hex2 - value_hex1
             result_hex = hex(int(result))[2:]
@@ -154,9 +149,39 @@ def AwayNumber():
             result_hex = hex(int(result))[2:]
             print(result_hex)
 
+def MultiplicationNumber():
+    print('Cистема исчисления:')
+    fNumSystem = GetNumSystem()
+    value1 = input('Введите число: ')
+    value2 = input('Введите второе число: ')
+
+    if fNumSystem == 2:
+        value_bin1 = int(value1, 2)
+        value_bin2 = int(value2, 2)
+        result = value_bin1 * value_bin2
+        result_bin = bin(int(result))[2:]
+        print(result_bin)
+    
+    elif fNumSystem == 8:
+        value_oct1 = int(value1, 8)
+        value_oct2 = int(value2, 8)
+        result = value_oct1 * value_oct2
+        result_oct = oct(int(result))[2:]
+        print(result_oct)
+
+    elif fNumSystem == 10:
+        print(int( int(value1) * int(value2) ))
+
+    elif fNumSystem == 16:
+        value_hex1 = int(value1, 16)
+        value_hex2 = int(value2, 16)
+        result = value_hex1 * value_hex2
+        result_hex = hex(int(result))[2:]
+        print(result_hex)
+
 
 def ActionChoice():
-    action_def = input('Что делаем: Переводим; Слогаем; Отнимаем;\n')
+    action_def = input('Что делаем: Переводим; Слогаем; Отнимаем; Умножаем;\n')
 
     if action_def == '1':
         ConvertNumber()
@@ -164,6 +189,8 @@ def ActionChoice():
         SumNumber()
     elif action_def == '3':
         AwayNumber()
+    elif action_def == '4':
+        MultiplicationNumber()
 
 def main():
     print('ВАС ПРЕВЕТСТВУЕТ КАЛЬКУЛЯТОР СС - TAMIVANT ')
